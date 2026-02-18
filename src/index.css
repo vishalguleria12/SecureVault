@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 40% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 40% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 40% 92%;
+
+    --primary: 160 100% 45%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 40% 92%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 16% 52%;
+
+    --accent: 200 80% 50%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 16% 18%;
+    --input: 220 16% 18%;
+    --ring: 160 100% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 40% 92%;
+    --sidebar-primary: 160 100% 45%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 16%;
+    --sidebar-accent-foreground: 210 40% 92%;
+    --sidebar-border: 220 16% 18%;
+    --sidebar-ring: 160 100% 45%;
+
+    --cyber-glow: 160 100% 45%;
+    --cyber-blue: 200 80% 50%;
+    --cyber-purple: 270 60% 55%;
+    --cyber-red: 0 72% 51%;
+    --cyber-yellow: 45 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  }
+}
+
+@layer utilities {
+  .glow-green {
+    box-shadow: 0 0 15px hsl(160 100% 45% / 0.3), 0 0 40px hsl(160 100% 45% / 0.1);
+  }
+  .glow-blue {
+    box-shadow: 0 0 15px hsl(200 80% 50% / 0.3), 0 0 40px hsl(200 80% 50% / 0.1);
+  }
+  .glow-red {
+    box-shadow: 0 0 15px hsl(0 72% 51% / 0.3), 0 0 40px hsl(0 72% 51% / 0.1);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px hsl(160 100% 45% / 0.5);
+  }
+  .cyber-grid {
+    background-image: 
+      linear-gradient(hsl(160 100% 45% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(160 100% 45% / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
